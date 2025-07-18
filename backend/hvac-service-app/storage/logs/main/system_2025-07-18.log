@@ -1,0 +1,228 @@
+[34m2025-07-18 23:16:24 [debug] create database instance: {"sync":{"alter":{"drop":false},"force":false},"dialect":"sqlite","underscored":false,"pool":{},"migrator":{"context":{"app":{"appName":"main","name":"main"}}},"logger":{},"rawTimezone":"+00:00"}[39m meta={"databaseInstanceId":"x1T2T1NWljpBtLaldrvqd"} module=database app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[32m2025-07-18 23:16:24 [info]  add app main into supervisor                [39m module=application submodule=supervisor method=addApp app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[32m2025-07-18 23:16:24 [info]  connection has been established successfully.[39m module=database method=auth app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:24 [debug] init plugins                                [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:24 [debug] loading app...                              [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:24 [debug] loading plugins...                          [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:24 [debug] plugins loaded                              [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:24 [debug] emit beforeInstall                          [39m module=application method=install app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:24 [debug] call db.sync()                              [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:24 [debug] install plugin [nocobase]...                [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[32m2025-07-18 23:16:24 [info]  start install built-in plugins              [39m module=nocobase app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:24 [debug] loading plugins...                          [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:24 [debug] Registering task type: command              [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:24 [debug] Subscribed to background job topic: workflow.pendingExecution[39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:25 [debug] plugins loaded                              [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:25 [debug] call db.sync()                              [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:27 [debug] install plugin [acl]...                     [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:27 [debug] install plugin [action-bulk-edit]...        [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:27 [debug] install plugin [action-bulk-update]...      [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:27 [debug] install plugin [action-custom-request]...   [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:27 [debug] install plugin [action-duplicate]...        [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:27 [debug] install plugin [action-export]...           [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:27 [debug] install plugin [action-import]...           [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:27 [debug] install plugin [action-print]...            [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:27 [debug] install plugin [auth]...                    [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:27 [debug] install plugin [block-iframe]...            [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:27 [debug] install plugin [calendar]...                [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:27 [debug] install plugin [client]...                  [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:27 [debug] install plugin [collection-sql]...          [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:27 [debug] install plugin [collection-tree]...         [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:27 [debug] install plugin [data-source-manager]...     [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:27 [debug] install plugin [environment-variables]...   [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:27 [debug] install plugin [error-handler]...           [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:27 [debug] install plugin [async-task-manager]...      [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:27 [debug] install plugin [field-formula]...           [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:27 [debug] install plugin [field-sort]...              [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:27 [debug] install plugin [data-source-main]...        [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:27 [debug] install plugin [data-visualization]...      [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:27 [debug] install plugin [field-sequence]...          [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:27 [debug] install plugin [file-manager]...            [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:27 [debug] install plugin [gantt]...                   [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:27 [debug] install plugin [text-copy]...               [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:27 [debug] install plugin [kanban]...                  [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:27 [debug] install plugin [logger]...                  [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:27 [debug] install plugin [mobile]...                  [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:27 [debug] install plugin [block-workbench]...         [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:27 [debug] install plugin [system-settings]...         [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:27 [debug] install plugin [ui-schema-storage]...       [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:27 [debug] install plugin [user-data-sync]...          [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:27 [debug] install plugin [users]...                   [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:28 [debug] install plugin [verification]...            [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:28 [debug] install plugin [workflow]...                [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:28 [debug] install plugin [ai]...                      [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:28 [debug] install plugin [notification-manager]...    [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:28 [debug] install plugin [notification-in-app-message]...[39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:28 [debug] install plugin [workflow-action-trigger]... [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:28 [debug] install plugin [workflow-aggregate]...      [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:28 [debug] install plugin [workflow-delay]...          [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:28 [debug] install plugin [workflow-loop]...           [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:28 [debug] install plugin [workflow-parallel]...       [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:28 [debug] install plugin [workflow-request]...        [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:28 [debug] install plugin [workflow-sql]...            [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:28 [debug] install plugin [workflow-notification]...   [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:28 [debug] install plugin [theme-editor]...            [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:28 [debug] install plugin [block-template]...          [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:28 [debug] install plugin [license]...                 [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[32m2025-07-18 23:16:28 [info]  finish install built-in plugins             [39m module=nocobase app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[34m2025-07-18 23:16:28 [debug] emit afterInstall                           [39m module=application method=install app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[32m2025-07-18 23:16:28 [info]  app installed successfully [v1.8.7]         [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[32m2025-07-18 23:16:28 [info]  [queue] gracefully shutting down...         [39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[32m2025-07-18 23:16:28 [info]  stopping workflow plugin before app (main) shutdown...[39m module=application app=main reqId=467b6849-48a6-4eb3-a034-72742bdcd18e dataSourceKey=main
+[31m2025-07-18 23:22:24 [error] {"code":"MODULE_NOT_FOUND","requireStack":["/workspace/SpeedyOS/backend/hvac-service-app/packages/plugins/hvac-service/src/server/auth/clerk.ts","/workspace/SpeedyOS/backend/hvac-service-app/packages/plugins/hvac-service/src/server/plugin.ts","/workspace/SpeedyOS/backend/hvac-service-app/packages/plugins/hvac-service/src/server/index.ts","/workspace/SpeedyOS/backend/hvac-service-app/packages/plugins/hvac-service/src/index.ts","/workspace/SpeedyOS/backend/hvac-service-app/node_modules/@nocobase/utils/lib/requireModule.js","/workspace/SpeedyOS/backend/hvac-service-app/node_modules/@nocobase/utils/lib/index.js","/workspace/SpeedyOS/backend/hvac-service-app/node_modules/@nocobase/server/lib/app-supervisor.js","/workspace/SpeedyOS/backend/hvac-service-app/node_modules/@nocobase/server/lib/index.js","/workspace/SpeedyOS/backend/hvac-service-app/storage/.app-dev/src/index.ts"]}[39m meta={"packageName":"hvac-service"} module=cli app=main dataSourceKey=main
+[34m2025-07-18 23:22:24 [debug] create database instance: {"sync":{"alter":{"drop":false},"force":false},"dialect":"sqlite","underscored":false,"pool":{},"migrator":{"context":{"app":{"appName":"main","name":"main"}}},"logger":{},"rawTimezone":"+00:00"}[39m meta={"databaseInstanceId":"Ro9iOVs1ola5xALvXajyi"} module=database app=main reqId=ad6fc3ce-11d1-43c9-89e2-23eb52d132cf dataSourceKey=main
+[32m2025-07-18 23:22:24 [info]  add app main into supervisor                [39m module=application submodule=supervisor method=addApp app=main reqId=ad6fc3ce-11d1-43c9-89e2-23eb52d132cf dataSourceKey=main
+[32m2025-07-18 23:22:24 [info]  load commands                               [39m module=application app=main reqId=ad6fc3ce-11d1-43c9-89e2-23eb52d132cf dataSourceKey=main
+[32m2025-07-18 23:22:24 [info]  [queue] gracefully shutting down...         [39m module=application app=main reqId=ad6fc3ce-11d1-43c9-89e2-23eb52d132cf dataSourceKey=main
+[31m2025-07-18 23:22:33 [error] {"code":"MODULE_NOT_FOUND","requireStack":["/workspace/SpeedyOS/backend/hvac-service-app/packages/plugins/hvac-service/src/server/auth/clerk.ts","/workspace/SpeedyOS/backend/hvac-service-app/packages/plugins/hvac-service/src/server/plugin.ts","/workspace/SpeedyOS/backend/hvac-service-app/packages/plugins/hvac-service/src/server/index.ts","/workspace/SpeedyOS/backend/hvac-service-app/packages/plugins/hvac-service/src/index.ts","/workspace/SpeedyOS/backend/hvac-service-app/node_modules/@nocobase/utils/lib/requireModule.js","/workspace/SpeedyOS/backend/hvac-service-app/node_modules/@nocobase/utils/lib/index.js","/workspace/SpeedyOS/backend/hvac-service-app/node_modules/@nocobase/server/lib/app-supervisor.js","/workspace/SpeedyOS/backend/hvac-service-app/node_modules/@nocobase/server/lib/index.js","/workspace/SpeedyOS/backend/hvac-service-app/storage/.app-dev/src/index.ts"]}[39m meta={"packageName":"hvac-service"} module=cli app=main dataSourceKey=main
+[34m2025-07-18 23:22:33 [debug] create database instance: {"sync":{"alter":{"drop":false},"force":false},"dialect":"sqlite","underscored":false,"pool":{},"migrator":{"context":{"app":{"appName":"main","name":"main"}}},"logger":{},"rawTimezone":"+00:00"}[39m meta={"databaseInstanceId":"uuOPSp6a0pqVpjcV0Jgeb"} module=database app=main reqId=3e120af2-dcf4-4b29-9c01-db601deac787 dataSourceKey=main
+[32m2025-07-18 23:22:34 [info]  add app main into supervisor                [39m module=application submodule=supervisor method=addApp app=main reqId=3e120af2-dcf4-4b29-9c01-db601deac787 dataSourceKey=main
+[32m2025-07-18 23:22:34 [info]  connection has been established successfully.[39m module=database method=auth app=main reqId=3e120af2-dcf4-4b29-9c01-db601deac787 dataSourceKey=main
+[34m2025-07-18 23:22:34 [debug] init plugins                                [39m module=application app=main reqId=3e120af2-dcf4-4b29-9c01-db601deac787 dataSourceKey=main
+[34m2025-07-18 23:22:34 [debug] loading app...                              [39m module=application app=main reqId=3e120af2-dcf4-4b29-9c01-db601deac787 dataSourceKey=main
+[34m2025-07-18 23:22:34 [debug] loading plugins...                          [39m module=application app=main reqId=3e120af2-dcf4-4b29-9c01-db601deac787 dataSourceKey=main
+[34m2025-07-18 23:22:34 [debug] Registering task type: command              [39m module=application app=main reqId=3e120af2-dcf4-4b29-9c01-db601deac787 dataSourceKey=main
+[34m2025-07-18 23:22:34 [debug] Subscribed to background job topic: workflow.pendingExecution[39m module=application app=main reqId=3e120af2-dcf4-4b29-9c01-db601deac787 dataSourceKey=main
+[34m2025-07-18 23:22:34 [debug] plugins loaded                              [39m module=application app=main reqId=3e120af2-dcf4-4b29-9c01-db601deac787 dataSourceKey=main
+[34m2025-07-18 23:22:34 [debug] loading locale resource...                  [39m module=application submodule=locale method=onAfterLoad app=main reqId=3e120af2-dcf4-4b29-9c01-db601deac787 dataSourceKey=main
+[34m2025-07-18 23:22:34 [debug] locale resource loaded                      [39m module=application submodule=locale method=onAfterLoad app=main reqId=3e120af2-dcf4-4b29-9c01-db601deac787 dataSourceKey=main
+[33m2025-07-18 23:22:34 [warn]  plugin not found Cannot find module '@clerk/clerk-sdk-node'[39m
+[33mRequire stack:[39m
+[33m- /workspace/SpeedyOS/backend/hvac-service-app/packages/plugins/hvac-service/src/server/auth/clerk.ts[39m
+[33m- /workspace/SpeedyOS/backend/hvac-service-app/packages/plugins/hvac-service/src/server/plugin.ts[39m
+[33m- /workspace/SpeedyOS/backend/hvac-service-app/packages/plugins/hvac-service/src/server/index.ts[39m
+[33m- /workspace/SpeedyOS/backend/hvac-service-app/packages/plugins/hvac-service/src/index.ts[39m
+[33m- /workspace/SpeedyOS/backend/hvac-service-app/node_modules/@nocobase/utils/lib/requireModule.js[39m
+[33m- /workspace/SpeedyOS/backend/hvac-service-app/node_modules/@nocobase/utils/lib/index.js[39m
+[33m- /workspace/SpeedyOS/backend/hvac-service-app/node_modules/@nocobase/server/lib/app-supervisor.js[39m
+[33m- /workspace/SpeedyOS/backend/hvac-service-app/node_modules/@nocobase/server/lib/index.js[39m
+[33m- /workspace/SpeedyOS/backend/hvac-service-app/storage/.app-dev/src/index.ts[39m stack=Error: Cannot find module '@clerk/clerk-sdk-node'
+Require stack:
+- /workspace/SpeedyOS/backend/hvac-service-app/packages/plugins/hvac-service/src/server/auth/clerk.ts
+- /workspace/SpeedyOS/backend/hvac-service-app/packages/plugins/hvac-service/src/server/plugin.ts
+- /workspace/SpeedyOS/backend/hvac-service-app/packages/plugins/hvac-service/src/server/index.ts
+- /workspace/SpeedyOS/backend/hvac-service-app/packages/plugins/hvac-service/src/index.ts
+- /workspace/SpeedyOS/backend/hvac-service-app/node_modules/@nocobase/utils/lib/requireModule.js
+- /workspace/SpeedyOS/backend/hvac-service-app/node_modules/@nocobase/utils/lib/index.js
+- /workspace/SpeedyOS/backend/hvac-service-app/node_modules/@nocobase/server/lib/app-supervisor.js
+- /workspace/SpeedyOS/backend/hvac-service-app/node_modules/@nocobase/server/lib/index.js
+- /workspace/SpeedyOS/backend/hvac-service-app/storage/.app-dev/src/index.ts
+    at node:internal/modules/cjs/loader:1401:15
+    at nextResolveSimple (/workspace/SpeedyOS/backend/hvac-service-app/node_modules/tsx/dist/register-D46fvsV_.cjs:4:1004)
+    at /workspace/SpeedyOS/backend/hvac-service-app/node_modules/tsx/dist/register-D46fvsV_.cjs:3:2630
+    at /workspace/SpeedyOS/backend/hvac-service-app/node_modules/tsx/dist/register-D46fvsV_.cjs:3:1542
+    at resolveTsPaths (/workspace/SpeedyOS/backend/hvac-service-app/node_modules/tsx/dist/register-D46fvsV_.cjs:4:760)
+    at /workspace/SpeedyOS/backend/hvac-service-app/node_modules/tsx/dist/register-D46fvsV_.cjs:4:1102
+    at Module._resolveFilename (/workspace/SpeedyOS/backend/hvac-service-app/node_modules/tsconfig-paths/src/register.ts:115:36)
+    at m._resolveFilename (file:///workspace/SpeedyOS/backend/hvac-service-app/node_modules/tsx/dist/register-B7jrtLTO.mjs:1:789)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)
+    at Function._load (node:internal/modules/cjs/loader:1211:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1487:12)
+    at require (node:internal/modules/helpers:135:16)
+    at <anonymous> (/workspace/SpeedyOS/backend/hvac-service-app/packages/plugins/hvac-service/src/server/auth/clerk.ts:3:38)
+    at Object.<anonymous> (/workspace/SpeedyOS/backend/hvac-service-app/packages/plugins/hvac-service/src/server/auth/clerk.ts:64:1)
+    at Module._compile (node:internal/modules/cjs/loader:1730:14)
+    at Object.transformer (/workspace/SpeedyOS/backend/hvac-service-app/node_modules/tsx/dist/register-D46fvsV_.cjs:3:1104)
+    at Module.load (node:internal/modules/cjs/loader:1465:32)
+    at Function._load (node:internal/modules/cjs/loader:1282:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14) meta={"code":"MODULE_NOT_FOUND","requireStack":["/workspace/SpeedyOS/backend/hvac-service-app/packages/plugins/hvac-service/src/server/auth/clerk.ts","/workspace/SpeedyOS/backend/hvac-service-app/packages/plugins/hvac-service/src/server/plugin.ts","/workspace/SpeedyOS/backend/hvac-service-app/packages/plugins/hvac-service/src/server/index.ts","/workspace/SpeedyOS/backend/hvac-service-app/packages/plugins/hvac-service/src/index.ts","/workspace/SpeedyOS/backend/hvac-service-app/node_modules/@nocobase/utils/lib/requireModule.js","/workspace/SpeedyOS/backend/hvac-service-app/node_modules/@nocobase/utils/lib/index.js","/workspace/SpeedyOS/backend/hvac-service-app/node_modules/@nocobase/server/lib/app-supervisor.js","/workspace/SpeedyOS/backend/hvac-service-app/node_modules/@nocobase/server/lib/index.js","/workspace/SpeedyOS/backend/hvac-service-app/storage/.app-dev/src/index.ts"]} module=application app=main reqId=3e120af2-dcf4-4b29-9c01-db601deac787 dataSourceKey=main
+[34m2025-07-18 23:22:34 [debug] start reload                                [39m module=application method=reload app=main reqId=3e120af2-dcf4-4b29-9c01-db601deac787 dataSourceKey=main
+[32m2025-07-18 23:22:34 [info]  app.reload()                                [39m module=application method=load app=main reqId=3e120af2-dcf4-4b29-9c01-db601deac787 dataSourceKey=main
+[34m2025-07-18 23:22:34 [debug] create database instance: {"sync":{"alter":{"drop":false},"force":false},"dialect":"sqlite","underscored":false,"pool":{},"migrator":{"context":{"app":{"appName":"main","name":"main"}}},"logger":{},"rawTimezone":"+00:00"}[39m meta={"databaseInstanceId":"yjzQlBVm583Eg4Z67liFM"} module=database app=main reqId=3e120af2-dcf4-4b29-9c01-db601deac787 dataSourceKey=main
+[34m2025-07-18 23:22:34 [debug] init plugins                                [39m module=application app=main reqId=3e120af2-dcf4-4b29-9c01-db601deac787 dataSourceKey=main
+[34m2025-07-18 23:22:34 [debug] loading app...                              [39m module=application app=main reqId=3e120af2-dcf4-4b29-9c01-db601deac787 dataSourceKey=main
+[34m2025-07-18 23:22:34 [debug] loading plugins...                          [39m module=application app=main reqId=3e120af2-dcf4-4b29-9c01-db601deac787 dataSourceKey=main
+[34m2025-07-18 23:22:34 [debug] Registering task type: command              [39m module=application app=main reqId=3e120af2-dcf4-4b29-9c01-db601deac787 dataSourceKey=main
+[34m2025-07-18 23:22:34 [debug] Subscribed to background job topic: workflow.pendingExecution[39m module=application app=main reqId=3e120af2-dcf4-4b29-9c01-db601deac787 dataSourceKey=main
+[34m2025-07-18 23:22:35 [debug] plugins loaded                              [39m module=application app=main reqId=3e120af2-dcf4-4b29-9c01-db601deac787 dataSourceKey=main
+[34m2025-07-18 23:22:35 [debug] loading locale resource...                  [39m module=application submodule=locale method=onAfterLoad app=main reqId=3e120af2-dcf4-4b29-9c01-db601deac787 dataSourceKey=main
+[34m2025-07-18 23:22:35 [debug] locale resource loaded                      [39m module=application submodule=locale method=onAfterLoad app=main reqId=3e120af2-dcf4-4b29-9c01-db601deac787 dataSourceKey=main
+[34m2025-07-18 23:22:35 [debug] emit afterReload                            [39m module=application method=reload app=main reqId=3e120af2-dcf4-4b29-9c01-db601deac787 dataSourceKey=main
+[34m2025-07-18 23:22:35 [debug] finish reload                               [39m module=application method=reload app=main reqId=3e120af2-dcf4-4b29-9c01-db601deac787 dataSourceKey=main
+[34m2025-07-18 23:22:35 [debug] start reload                                [39m module=application method=reload app=main reqId=3e120af2-dcf4-4b29-9c01-db601deac787 dataSourceKey=main
+[32m2025-07-18 23:22:35 [info]  app.reload()                                [39m module=application method=load app=main reqId=3e120af2-dcf4-4b29-9c01-db601deac787 dataSourceKey=main
+[34m2025-07-18 23:22:35 [debug] create database instance: {"sync":{"alter":{"drop":false},"force":false},"dialect":"sqlite","underscored":false,"pool":{},"migrator":{"context":{"app":{"appName":"main","name":"main"}}},"logger":{},"rawTimezone":"+00:00"}[39m meta={"databaseInstanceId":"gDvgJ1PpxyB6ay7RCbdh0"} module=database app=main reqId=3e120af2-dcf4-4b29-9c01-db601deac787 dataSourceKey=main
+[34m2025-07-18 23:22:35 [debug] init plugins                                [39m module=application app=main reqId=3e120af2-dcf4-4b29-9c01-db601deac787 dataSourceKey=main
+[34m2025-07-18 23:22:35 [debug] loading app...                              [39m module=application app=main reqId=3e120af2-dcf4-4b29-9c01-db601deac787 dataSourceKey=main
+[34m2025-07-18 23:22:35 [debug] loading plugins...                          [39m module=application app=main reqId=3e120af2-dcf4-4b29-9c01-db601deac787 dataSourceKey=main
+[34m2025-07-18 23:22:35 [debug] Registering task type: command              [39m module=application app=main reqId=3e120af2-dcf4-4b29-9c01-db601deac787 dataSourceKey=main
+[34m2025-07-18 23:22:35 [debug] Subscribed to background job topic: workflow.pendingExecution[39m module=application app=main reqId=3e120af2-dcf4-4b29-9c01-db601deac787 dataSourceKey=main
+[34m2025-07-18 23:22:35 [debug] plugins loaded                              [39m module=application app=main reqId=3e120af2-dcf4-4b29-9c01-db601deac787 dataSourceKey=main
+[34m2025-07-18 23:22:35 [debug] loading locale resource...                  [39m module=application submodule=locale method=onAfterLoad app=main reqId=3e120af2-dcf4-4b29-9c01-db601deac787 dataSourceKey=main
+[34m2025-07-18 23:22:36 [debug] locale resource loaded                      [39m module=application submodule=locale method=onAfterLoad app=main reqId=3e120af2-dcf4-4b29-9c01-db601deac787 dataSourceKey=main
+[34m2025-07-18 23:22:36 [debug] emit afterReload                            [39m module=application method=reload app=main reqId=3e120af2-dcf4-4b29-9c01-db601deac787 dataSourceKey=main
+[34m2025-07-18 23:22:36 [debug] finish reload                               [39m module=application method=reload app=main reqId=3e120af2-dcf4-4b29-9c01-db601deac787 dataSourceKey=main
+[32m2025-07-18 23:22:36 [info]  [queue] gracefully shutting down...         [39m module=application app=main reqId=3e120af2-dcf4-4b29-9c01-db601deac787 dataSourceKey=main
+[32m2025-07-18 23:22:36 [info]  [queue] gracefully shutting down...         [39m module=application app=main reqId=3e120af2-dcf4-4b29-9c01-db601deac787 dataSourceKey=main
+[32m2025-07-18 23:22:36 [info]  [queue] gracefully shutting down...         [39m module=application app=main reqId=3e120af2-dcf4-4b29-9c01-db601deac787 dataSourceKey=main
+[32m2025-07-18 23:22:36 [info]  stopping workflow plugin before app (main) shutdown...[39m module=application app=main reqId=3e120af2-dcf4-4b29-9c01-db601deac787 dataSourceKey=main
+[34m2025-07-18 23:23:09 [debug] create database instance: {"sync":{"alter":{"drop":false},"force":false},"dialect":"sqlite","underscored":false,"pool":{},"migrator":{"context":{"app":{"appName":"main","name":"main"}}},"logger":{},"rawTimezone":"+00:00"}[39m meta={"databaseInstanceId":"U1gCA9NRxh6PMWuqI4Q8V"} module=database app=main reqId=0b6c6531-444d-4d1c-bd18-2069adac39e6 dataSourceKey=main
+[32m2025-07-18 23:23:09 [info]  add app main into supervisor                [39m module=application submodule=supervisor method=addApp app=main reqId=0b6c6531-444d-4d1c-bd18-2069adac39e6 dataSourceKey=main
+[32m2025-07-18 23:23:09 [info]  connection has been established successfully.[39m module=database method=auth app=main reqId=0b6c6531-444d-4d1c-bd18-2069adac39e6 dataSourceKey=main
+[34m2025-07-18 23:23:09 [debug] init plugins                                [39m module=application app=main reqId=0b6c6531-444d-4d1c-bd18-2069adac39e6 dataSourceKey=main
+[34m2025-07-18 23:23:09 [debug] loading app...                              [39m module=application app=main reqId=0b6c6531-444d-4d1c-bd18-2069adac39e6 dataSourceKey=main
+[34m2025-07-18 23:23:09 [debug] loading plugins...                          [39m module=application app=main reqId=0b6c6531-444d-4d1c-bd18-2069adac39e6 dataSourceKey=main
+[34m2025-07-18 23:23:09 [debug] Registering task type: command              [39m module=application app=main reqId=0b6c6531-444d-4d1c-bd18-2069adac39e6 dataSourceKey=main
+[34m2025-07-18 23:23:09 [debug] Subscribed to background job topic: workflow.pendingExecution[39m module=application app=main reqId=0b6c6531-444d-4d1c-bd18-2069adac39e6 dataSourceKey=main
+[34m2025-07-18 23:23:09 [debug] plugins loaded                              [39m module=application app=main reqId=0b6c6531-444d-4d1c-bd18-2069adac39e6 dataSourceKey=main
+[34m2025-07-18 23:23:09 [debug] loading locale resource...                  [39m module=application submodule=locale method=onAfterLoad app=main reqId=0b6c6531-444d-4d1c-bd18-2069adac39e6 dataSourceKey=main
+[34m2025-07-18 23:23:10 [debug] locale resource loaded                      [39m module=application submodule=locale method=onAfterLoad app=main reqId=0b6c6531-444d-4d1c-bd18-2069adac39e6 dataSourceKey=main
+[34m2025-07-18 23:23:10 [debug] enabling plugin hvac-service                [39m module=application app=main reqId=0b6c6531-444d-4d1c-bd18-2069adac39e6 dataSourceKey=main
+[34m2025-07-18 23:23:10 [debug] syncing database in enable plugin hvac-service...[39m module=application app=main reqId=0b6c6531-444d-4d1c-bd18-2069adac39e6 dataSourceKey=main
+[34m2025-07-18 23:23:11 [debug] installing plugin hvac-service...           [39m module=application app=main reqId=0b6c6531-444d-4d1c-bd18-2069adac39e6 dataSourceKey=main
+[34m2025-07-18 23:23:12 [debug] emit afterEnablePlugin event...             [39m module=application app=main reqId=0b6c6531-444d-4d1c-bd18-2069adac39e6 dataSourceKey=main
+[34m2025-07-18 23:23:12 [debug] afterEnablePlugin event emitted             [39m module=application app=main reqId=0b6c6531-444d-4d1c-bd18-2069adac39e6 dataSourceKey=main
+[34m2025-07-18 23:23:12 [debug] start reload                                [39m module=application method=reload app=main reqId=0b6c6531-444d-4d1c-bd18-2069adac39e6 dataSourceKey=main
+[32m2025-07-18 23:23:12 [info]  app.reload()                                [39m module=application method=load app=main reqId=0b6c6531-444d-4d1c-bd18-2069adac39e6 dataSourceKey=main
+[34m2025-07-18 23:23:12 [debug] create database instance: {"sync":{"alter":{"drop":false},"force":false},"dialect":"sqlite","underscored":false,"pool":{},"migrator":{"context":{"app":{"appName":"main","name":"main"}}},"logger":{},"rawTimezone":"+00:00"}[39m meta={"databaseInstanceId":"iVMGwdF7tJn7fAD3n2piy"} module=database app=main reqId=0b6c6531-444d-4d1c-bd18-2069adac39e6 dataSourceKey=main
+[34m2025-07-18 23:23:12 [debug] init plugins                                [39m module=application app=main reqId=0b6c6531-444d-4d1c-bd18-2069adac39e6 dataSourceKey=main
+[34m2025-07-18 23:23:12 [debug] loading app...                              [39m module=application app=main reqId=0b6c6531-444d-4d1c-bd18-2069adac39e6 dataSourceKey=main
+[34m2025-07-18 23:23:12 [debug] loading plugins...                          [39m module=application app=main reqId=0b6c6531-444d-4d1c-bd18-2069adac39e6 dataSourceKey=main
+[34m2025-07-18 23:23:12 [debug] Registering task type: command              [39m module=application app=main reqId=0b6c6531-444d-4d1c-bd18-2069adac39e6 dataSourceKey=main
+[34m2025-07-18 23:23:12 [debug] Subscribed to background job topic: workflow.pendingExecution[39m module=application app=main reqId=0b6c6531-444d-4d1c-bd18-2069adac39e6 dataSourceKey=main
+[34m2025-07-18 23:23:12 [debug] plugins loaded                              [39m module=application app=main reqId=0b6c6531-444d-4d1c-bd18-2069adac39e6 dataSourceKey=main
+[34m2025-07-18 23:23:12 [debug] loading locale resource...                  [39m module=application submodule=locale method=onAfterLoad app=main reqId=0b6c6531-444d-4d1c-bd18-2069adac39e6 dataSourceKey=main
+[34m2025-07-18 23:23:13 [debug] locale resource loaded                      [39m module=application submodule=locale method=onAfterLoad app=main reqId=0b6c6531-444d-4d1c-bd18-2069adac39e6 dataSourceKey=main
+[34m2025-07-18 23:23:13 [debug] emit afterReload                            [39m module=application method=reload app=main reqId=0b6c6531-444d-4d1c-bd18-2069adac39e6 dataSourceKey=main
+[34m2025-07-18 23:23:13 [debug] finish reload                               [39m module=application method=reload app=main reqId=0b6c6531-444d-4d1c-bd18-2069adac39e6 dataSourceKey=main
+[32m2025-07-18 23:23:13 [info]  [queue] gracefully shutting down...         [39m module=application app=main reqId=0b6c6531-444d-4d1c-bd18-2069adac39e6 dataSourceKey=main
+[32m2025-07-18 23:23:13 [info]  [queue] gracefully shutting down...         [39m module=application app=main reqId=0b6c6531-444d-4d1c-bd18-2069adac39e6 dataSourceKey=main
+[32m2025-07-18 23:23:13 [info]  stopping workflow plugin before app (main) shutdown...[39m module=application app=main reqId=0b6c6531-444d-4d1c-bd18-2069adac39e6 dataSourceKey=main
+[34m2025-07-18 23:23:25 [debug] create database instance: {"sync":{"alter":{"drop":false},"force":false},"dialect":"sqlite","underscored":false,"pool":{},"migrator":{"context":{"app":{"appName":"main","name":"main"}}},"logger":{},"rawTimezone":"+00:00"}[39m meta={"databaseInstanceId":"YBFyrXUAVSrxSrL1HJ_ON"} module=database app=main reqId=fad0754d-ef38-414a-a866-b973edd04d3b dataSourceKey=main
+[32m2025-07-18 23:23:25 [info]  add app main into supervisor                [39m module=application submodule=supervisor method=addApp app=main reqId=fad0754d-ef38-414a-a866-b973edd04d3b dataSourceKey=main
+[32m2025-07-18 23:23:25 [info]  connection has been established successfully.[39m module=database method=auth app=main reqId=fad0754d-ef38-414a-a866-b973edd04d3b dataSourceKey=main
+[34m2025-07-18 23:23:25 [debug] init plugins                                [39m module=application app=main reqId=fad0754d-ef38-414a-a866-b973edd04d3b dataSourceKey=main
+[34m2025-07-18 23:23:25 [debug] loading app...                              [39m module=application app=main reqId=fad0754d-ef38-414a-a866-b973edd04d3b dataSourceKey=main
+[34m2025-07-18 23:23:25 [debug] loading plugins...                          [39m module=application app=main reqId=fad0754d-ef38-414a-a866-b973edd04d3b dataSourceKey=main
+[34m2025-07-18 23:23:25 [debug] Registering task type: command              [39m module=application app=main reqId=fad0754d-ef38-414a-a866-b973edd04d3b dataSourceKey=main
+[34m2025-07-18 23:23:25 [debug] Subscribed to background job topic: workflow.pendingExecution[39m module=application app=main reqId=fad0754d-ef38-414a-a866-b973edd04d3b dataSourceKey=main
+[34m2025-07-18 23:23:26 [debug] plugins loaded                              [39m module=application app=main reqId=fad0754d-ef38-414a-a866-b973edd04d3b dataSourceKey=main
+[34m2025-07-18 23:23:26 [debug] loading locale resource...                  [39m module=application submodule=locale method=onAfterLoad app=main reqId=fad0754d-ef38-414a-a866-b973edd04d3b dataSourceKey=main
+[34m2025-07-18 23:23:27 [debug] locale resource loaded                      [39m module=application submodule=locale method=onAfterLoad app=main reqId=fad0754d-ef38-414a-a866-b973edd04d3b dataSourceKey=main
+[34m2025-07-18 23:23:27 [debug] starting app...                             [39m module=application app=main reqId=fad0754d-ef38-414a-a866-b973edd04d3b dataSourceKey=main
+[34m2025-07-18 23:23:27 [debug] loading custom collections                  [39m module=data-source-main method=loadCollections app=main reqId=fad0754d-ef38-414a-a866-b973edd04d3b dataSourceKey=main
+[34m2025-07-18 23:23:27 [debug] loading collections...                      [39m module=database app=main reqId=fad0754d-ef38-414a-a866-b973edd04d3b dataSourceKey=main
+[34m2025-07-18 23:23:27 [debug] collections loaded                          [39m module=database app=main reqId=fad0754d-ef38-414a-a866-b973edd04d3b dataSourceKey=main
+[32m2025-07-18 23:23:27 [info]  write roles to ACL                          [39m module=acl method=writeRolesToACL app=main reqId=fad0754d-ef38-414a-a866-b973edd04d3b dataSourceKey=main
+[32m2025-07-18 23:23:27 [info]  app has been started                        [39m module=application app=main reqId=fad0754d-ef38-414a-a866-b973edd04d3b dataSourceKey=main
+[34m2025-07-18 23:51:42 [debug] ctx permission                              [39m meta={"can":null,"resourceName":"app","actionName":"getLang","skip":true} module=app submodule=getLang app=main reqId=691971c6-828b-4804-9038-81fd46009cbb dataSourceKey=main
+[34m2025-07-18 23:51:42 [debug] acl params                                  [39m module=app submodule=getLang app=main reqId=691971c6-828b-4804-9038-81fd46009cbb dataSourceKey=main
+[34m2025-07-18 23:51:42 [debug] acl parsedParams                            [39m module=app submodule=getLang app=main reqId=691971c6-828b-4804-9038-81fd46009cbb dataSourceKey=main
+[34m2025-07-18 23:51:43 [debug] ctx permission                              [39m meta={"can":null,"resourceName":"pm","actionName":"listEnabled","skip":true} module=pm submodule=listEnabled app=main reqId=ec516b6e-6ef7-439b-a728-499ff5b2521c dataSourceKey=main
+[34m2025-07-18 23:51:43 [debug] acl params                                  [39m module=pm submodule=listEnabled app=main reqId=ec516b6e-6ef7-439b-a728-499ff5b2521c dataSourceKey=main
+[34m2025-07-18 23:51:43 [debug] acl parsedParams                            [39m module=pm submodule=listEnabled app=main reqId=ec516b6e-6ef7-439b-a728-499ff5b2521c dataSourceKey=main
+[34m2025-07-18 23:51:54 [debug] ctx permission                              [39m meta={"can":null,"resourceName":"app","actionName":"getLang","skip":true} module=app submodule=getLang app=main reqId=9923dae7-dd90-4ab1-a19e-7a1fefb6fa23 dataSourceKey=main
+[34m2025-07-18 23:51:54 [debug] acl params                                  [39m module=app submodule=getLang app=main reqId=9923dae7-dd90-4ab1-a19e-7a1fefb6fa23 dataSourceKey=main
+[34m2025-07-18 23:51:54 [debug] acl parsedParams                            [39m module=app submodule=getLang app=main reqId=9923dae7-dd90-4ab1-a19e-7a1fefb6fa23 dataSourceKey=main
+[34m2025-07-18 23:51:54 [debug] ctx permission                              [39m meta={"can":null,"resourceName":"pm","actionName":"listEnabled","skip":true} module=pm submodule=listEnabled app=main reqId=3b937c8f-346c-4d54-80ba-6a017a349e1b dataSourceKey=main
+[34m2025-07-18 23:51:54 [debug] acl params                                  [39m module=pm submodule=listEnabled app=main reqId=3b937c8f-346c-4d54-80ba-6a017a349e1b dataSourceKey=main
+[34m2025-07-18 23:51:54 [debug] acl parsedParams                            [39m module=pm submodule=listEnabled app=main reqId=3b937c8f-346c-4d54-80ba-6a017a349e1b dataSourceKey=main
+[34m2025-07-18 23:52:09 [debug] ctx permission                              [39m meta={"can":null,"resourceName":"app","actionName":"getLang","skip":true} module=app submodule=getLang app=main reqId=16310cad-01c6-406c-93ec-f0091011c516 dataSourceKey=main
+[34m2025-07-18 23:52:09 [debug] acl params                                  [39m module=app submodule=getLang app=main reqId=16310cad-01c6-406c-93ec-f0091011c516 dataSourceKey=main
+[34m2025-07-18 23:52:09 [debug] acl parsedParams                            [39m module=app submodule=getLang app=main reqId=16310cad-01c6-406c-93ec-f0091011c516 dataSourceKey=main
+[34m2025-07-18 23:52:10 [debug] ctx permission                              [39m meta={"can":null,"resourceName":"pm","actionName":"listEnabled","skip":true} module=pm submodule=listEnabled app=main reqId=b6e73987-ce14-4e64-819b-1d211f1f01d8 dataSourceKey=main
+[34m2025-07-18 23:52:10 [debug] acl params                                  [39m module=pm submodule=listEnabled app=main reqId=b6e73987-ce14-4e64-819b-1d211f1f01d8 dataSourceKey=main
+[34m2025-07-18 23:52:10 [debug] acl parsedParams                            [39m module=pm submodule=listEnabled app=main reqId=b6e73987-ce14-4e64-819b-1d211f1f01d8 dataSourceKey=main

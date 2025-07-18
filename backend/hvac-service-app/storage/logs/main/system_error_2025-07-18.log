@@ -1,0 +1,16 @@
+[31m2025-07-18 23:22:24 [error] error: unknown command 'plugin:enable'      [39m stack=CommanderError: error: unknown command 'plugin:enable'
+    at _AppCommand._exit (/workspace/SpeedyOS/backend/hvac-service-app/node_modules/@nocobase/server/node_modules/commander/lib/command.js:449:26)
+    at _AppCommand.error (/workspace/SpeedyOS/backend/hvac-service-app/node_modules/@nocobase/server/node_modules/commander/lib/command.js:1591:10)
+    at _AppCommand.unknownCommand (/workspace/SpeedyOS/backend/hvac-service-app/node_modules/@nocobase/server/node_modules/commander/lib/command.js:1782:10)
+    at _AppCommand._parseCommand (/workspace/SpeedyOS/backend/hvac-service-app/node_modules/@nocobase/server/node_modules/commander/lib/command.js:1304:14)
+    at _AppCommand.parseAsync (/workspace/SpeedyOS/backend/hvac-service-app/node_modules/@nocobase/server/node_modules/commander/lib/command.js:935:16)
+    at _AsyncEmitter.runAsCLI (/workspace/SpeedyOS/backend/hvac-service-app/node_modules/@nocobase/server/lib/application.js:589:38) module=application app=main reqId=ad6fc3ce-11d1-43c9-89e2-23eb52d132cf dataSourceKey=main
+[31m2025-07-18 23:22:36 [error] Failed to enable plugin                     [39m stack=Error: Failed to enable plugin
+    at _AppCommand.<anonymous> (/workspace/SpeedyOS/backend/hvac-service-app/node_modules/@nocobase/server/lib/commands/pm.js:75:13)
+    at async _AppCommand.parseAsync (/workspace/SpeedyOS/backend/hvac-service-app/node_modules/@nocobase/server/node_modules/commander/lib/command.js:935:5)
+    at async _AsyncEmitter.runAsCLI (/workspace/SpeedyOS/backend/hvac-service-app/node_modules/@nocobase/server/lib/application.js:589:23) module=application app=main reqId=3e120af2-dcf4-4b29-9c01-db601deac787 dataSourceKey=main
+[31m2025-07-18 23:22:36 [error] hvac-service plugin does not exist          [39m stack=Error: hvac-service plugin does not exist
+    at _PluginManager.enable (/workspace/SpeedyOS/backend/hvac-service-app/node_modules/@nocobase/server/lib/plugin-manager/plugin-manager.js:528:17)
+    at async _AppCommand.<anonymous> (/workspace/SpeedyOS/backend/hvac-service-app/node_modules/@nocobase/server/lib/commands/pm.js:70:7)
+    at async _AppCommand.parseAsync (/workspace/SpeedyOS/backend/hvac-service-app/node_modules/@nocobase/server/node_modules/commander/lib/command.js:935:5)
+    at async _AsyncEmitter.runAsCLI (/workspace/SpeedyOS/backend/hvac-service-app/node_modules/@nocobase/server/lib/application.js:589:23) app=main reqId=3e120af2-dcf4-4b29-9c01-db601deac787

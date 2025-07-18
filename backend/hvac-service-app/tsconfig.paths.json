@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@@/*": [
+        ".dumi/tmp/*"
+      ],
+      "hvac-service/client": [
+        "packages/plugins/hvac-service/src/client"
+      ],
+      "hvac-service/package.json": [
+        "packages/plugins/hvac-service/package.json"
+      ],
+      "hvac-service": [
+        "packages/plugins/hvac-service/src"
+      ]
+    }
+  }
+}

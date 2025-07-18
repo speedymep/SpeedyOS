@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/workspace/SpeedyOS/backend/hvac-service-app/storage/logs/main/.8efaf161765edc52eab9457e8a4d13e326ec0a96-audit.json",
+    "files": [
+        {
+            "date": 1752880553859,
+            "name": "/workspace/SpeedyOS/backend/hvac-service-app/storage/logs/main/request_2025-07-18.log",
+            "hash": "211ec953d765ccf2e48274aae721c509b80946f5cc9c57faff9f4163e39254bb"
+        }
+    ],
+    "hashType": "sha256"
+}
