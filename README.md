@@ -105,4 +105,4 @@ SpeedyOS supports white labeling through NocoBase's UI settings. You can customi
 
 ## License
 
-MIT
+MIT# Additional information
