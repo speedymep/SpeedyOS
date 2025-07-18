@@ -52,33 +52,45 @@ SpeedyOS is a comprehensive white-label platform for field service management, s
    ```
 
 3. Configure environment variables:
-   Edit the `.env` file in the `backend/hvac-service-app` directory:
+   The `.env` file in the `backend/hvac-service-app` directory is already configured with Clerk API keys:
    ```
    # Authentication Configuration
    AUTH_PROVIDER=clerk
-   CLERK_API_KEY=your_clerk_api_key
-   CLERK_FRONTEND_API=your_clerk_frontend_api
-
-   # n8n Integration
-   N8N_API_URL=your_n8n_api_url
-   N8N_API_KEY=your_n8n_api_key
-
-   # Multi-tenant Configuration (optional)
-   ALLOW_MULTI_TENANT=true
-   TENANT_DOMAIN_PATTERN=*.speedyos.com
+   CLERK_API_KEY=sk_test_wYBxdIO9dF4gJscva7bLuEBH6XavZa3I1n9xdh7F2V
+   CLERK_FRONTEND_API=pk_test_bW9yYWwtc3VuZmlzaC05Ni5jbGVyay5hY2NvdW50cy5kZXYk
    ```
 
-4. Install NocoBase:
+4. Set up n8n (Option 1 - Docker):
    ```
+   # Start n8n using Docker Compose
+   docker-compose up -d n8n
+   
+   # Run the setup script to configure n8n
+   ./scripts/setup-n8n.sh
+   ```
+
+   Set up n8n (Option 2 - Manual):
+   ```
+   # Install n8n globally
+   npm install n8n -g
+   
+   # Start n8n
+   n8n start
+   ```
+   Then visit http://localhost:5678 to set up workflows and generate an API key.
+
+5. Install NocoBase:
+   ```
+   cd backend/hvac-service-app
    yarn nocobase install
    ```
 
-5. Start the development server:
+6. Start the development server:
    ```
    yarn dev
    ```
 
-6. Access the application at http://localhost:12000
+7. Access the application at http://localhost:12000
 
 ### Production Deployment
 

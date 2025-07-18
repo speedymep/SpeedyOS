@@ -1,0 +1,50 @@
+version: '3'
+
+services:
+  # NocoBase application
+  nocobase:
+    build:
+      context: ./backend/hvac-service-app
+    ports:
+      - "12000:12000"
+      - "12001:12001"
+    environment:
+      - APP_ENV=development
+      - AUTH_PROVIDER=clerk
+      - CLERK_API_KEY=${CLERK_API_KEY}
+      - CLERK_FRONTEND_API=${CLERK_FRONTEND_API}
+      - N8N_API_URL=http://n8n:5678/api/v1
+      - N8N_API_KEY=${N8N_API_KEY}
+      - ALLOW_MULTI_TENANT=true
+    volumes:
+      - ./backend/hvac-service-app:/app
+      - nocobase_node_modules:/app/node_modules
+    depends_on:
+      - n8n
+    networks:
+      - speedyos-network
+
+  # n8n workflow automation
+  n8n:
+    image: n8nio/n8n:latest
+    ports:
+      - "5678:5678"
+    environment:
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=http
+      - N8N_HOST=n8n
+      - N8N_EDITOR_BASE_URL=http://localhost:5678
+      - WEBHOOK_URL=http://n8n:5678/
+      - GENERIC_TIMEZONE=UTC
+    volumes:
+      - n8n_data:/home/node/.n8n
+    networks:
+      - speedyos-network
+
+networks:
+  speedyos-network:
+    driver: bridge
+
+volumes:
+  nocobase_node_modules:
+  n8n_data:

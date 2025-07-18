@@ -17,34 +17,47 @@ n8n is used in SpeedyOS to automate various workflows such as:
 
 ### 1. Install n8n
 
-You can install n8n using Docker, npm, or their cloud offering:
+SpeedyOS provides two ways to set up n8n:
 
-#### Using Docker:
+#### Option 1: Using Docker Compose (Recommended)
 ```bash
-docker run -it --rm \
-  --name n8n \
-  -p 5678:5678 \
-  -v ~/.n8n:/home/node/.n8n \
-  n8nio/n8n
+# From the SpeedyOS root directory
+docker-compose up -d n8n
+
+# Run the setup script to configure n8n
+./scripts/setup-n8n.sh
 ```
 
-#### Using npm:
+This will:
+- Start n8n on port 5678
+- Create an API key
+- Set up example workflows
+- Update your `.env` file with the API key
+
+#### Option 2: Manual Installation
+
+You can install n8n using npm:
 ```bash
 npm install n8n -g
 n8n start
 ```
 
+Then visit http://localhost:5678 to set up workflows and generate an API key.
+
 ### 2. Configure Environment Variables
 
-In your SpeedyOS `.env` file, add the following:
+The `.env` file in SpeedyOS is pre-configured for n8n:
 
 ```
 # n8n Integration
 N8N_API_URL=http://localhost:5678/api/v1
-N8N_API_KEY=your_n8n_api_key
+N8N_API_KEY=n8n_api_placeholder_key
 ```
 
-To get your API key, go to n8n settings > API > Create API Key.
+If you're using the Docker Compose setup, the `setup-n8n.sh` script will automatically update the API key. If you're setting up n8n manually, you'll need to:
+
+1. Go to n8n settings > API > Create API Key
+2. Update the `.env` file with your API key
 
 ### 3. Create Webhook Endpoints
 
