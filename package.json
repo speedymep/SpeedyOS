@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "cd app-builder/runtime && npm install && npm run build"
+    "prebuild": "bash ./build.sh",
+    "build": "cd build && npm install && npm run build",
+    "start": "cd build && npm run preview"
   }
 }
