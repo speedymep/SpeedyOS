@@ -3,6 +3,11 @@ import { HVACServiceWorkflows } from './workflows';
 import { HVACServiceComponents } from './components';
 import { HVACServicePages } from './pages';
 import { HVACServiceTheme } from './theme';
+import { HVACServiceAPI } from './api';
+import { HVACServiceDatabase } from './database';
+import { HVACServiceAuth } from './auth';
+import { HVACServiceIntegrations } from './integrations';
+import { HVACServiceReports } from './reports';
 
 /**
  * HVAC Service App Configuration
@@ -17,6 +22,11 @@ export const HVACServiceApp = {
   components: HVACServiceComponents,
   pages: HVACServicePages,
   theme: HVACServiceTheme,
+  api: HVACServiceAPI,
+  database: HVACServiceDatabase,
+  auth: HVACServiceAuth,
+  integrations: HVACServiceIntegrations,
+  reports: HVACServiceReports,
   navigation: {
     logo: {
       text: 'SpeedyHVAC',
