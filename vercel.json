@@ -1,7 +1,4 @@
 {
-  "buildCommand": "cd app-builder/runtime && npm install && npm run build",
-  "outputDirectory": "app-builder/runtime/dist",
-  "framework": "vite",
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ]
