@@ -14,30 +14,32 @@ Clerk provides a complete authentication and user management solution for Speedy
 
 ## Setup
 
-### 1. Create a Clerk Account
+### 1. Clerk Account
 
-1. Go to [clerk.dev](https://clerk.dev) and sign up for an account
+SpeedyOS comes pre-configured with a test Clerk account. The API keys are already set in the `.env` file:
+
+```
+# Authentication Configuration
+AUTH_PROVIDER=clerk
+CLERK_API_KEY=sk_test_wYBxdIO9dF4gJscva7bLuEBH6XavZa3I1n9xdh7F2V
+CLERK_FRONTEND_API=pk_test_bW9yYWwtc3VuZmlzaC05Ni5jbGVyay5hY2NvdW50cy5kZXYk
+```
+
+For production use, you should:
+
+1. Go to [clerk.dev](https://clerk.dev) and sign up for your own account
 2. Create a new application in the Clerk dashboard
 3. Configure your authentication methods (email/password, Google, etc.)
 4. Set up your application's appearance and branding
+5. Replace the API keys in the `.env` file with your own
 
-### 2. Get API Keys
+### 2. Get Your Own API Keys
 
 From your Clerk dashboard:
 
 1. Go to API Keys
 2. Copy your "API Key" and "Frontend API" values
-
-### 3. Configure Environment Variables
-
-In your SpeedyOS `.env` file, add the following:
-
-```
-# Authentication Configuration
-AUTH_PROVIDER=clerk
-CLERK_API_KEY=your_clerk_api_key
-CLERK_FRONTEND_API=your_clerk_frontend_api
-```
+3. Update the `.env` file with these values
 
 ### 4. User Roles and Permissions
 
