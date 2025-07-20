@@ -1,108 +1,116 @@
-# SpeedyOS - Multi-Tenant B2B No-Code App Builder Platform
+# Ninja OS - Comprehensive B2B Field Service Platform
 
-SpeedyOS is a comprehensive no-code platform for building custom business applications. It provides a flexible and extensible framework for creating various types of applications, including field service management, CRM, project management, and more.
+Ninja OS is a white-labeled, integrated platform that combines best-in-class tools to provide a complete solution for field service businesses. It integrates NocoBase, n8n, and Auth0/Clerk into a unified platform that can be customized and resold as a complete solution.
 
 ## Architecture
 
-- **Core Modules**:
-  - **Data Modeling**: Define and manage data models with custom fields, relationships, and validation
-  - **UI Builder**: Create responsive user interfaces with drag-and-drop components
-  - **Workflow Automation**: Design and execute business processes with a visual workflow editor
-  - **Authentication**: Secure your applications with role-based access control
-  - **Integrations**: Connect with third-party services and APIs
+- **Core Components**:
+  - **NocoBase**: Data modeling and admin interfaces
+  - **n8n**: Sophisticated workflow automation
+  - **Auth0/Clerk**: User authentication and role management
+  - **Custom UI**: White-labeled customer experiences
 
-- **Plugins**: Extend the platform with additional functionality
-  - **Field Service**: Components and templates for field service applications
-  - **CRM**: Components and templates for CRM applications
-  - **Project Management**: Components and templates for project management applications
+- **Multi-portal Architecture**:
+  - **Customer Portal**: Self-service portal for customers
+  - **Technician Portal**: Mobile-friendly interface for field technicians
+  - **Admin Dashboard**: Comprehensive management interface
+  - **Partner Portal**: Interface for subcontractors and partners
 
-- **Templates**: Pre-built application templates for common use cases
-  - **HVAC Service**: Complete HVAC field service management application
-  - **General Contractor**: General contractor management application
-  - **IT Service Desk**: IT service desk application
+- **Integration Layer**:
+  - **API Gateway**: Unified API access
+  - **Authentication Service**: Centralized auth management
+  - **Workflow Engine**: Business process orchestration
 
 ## Features
 
-- **No-Code Development**: Build applications without writing code
-- **Multi-Tenant Architecture**: Support for B2B SaaS deployment
-- **White-Labeling**: Customize the look and feel of your applications
-- **Responsive Design**: Mobile-friendly interface
-- **Extensible Framework**: Add custom components and integrations
-- **Role-Based Access Control**: Secure your applications with fine-grained permissions
-- **Workflow Automation**: Create complex business processes with a visual editor
-- **Integration Capabilities**: Connect with third-party services and APIs
+- **Comprehensive Field Service Management**:
+  - Service request management
+  - Scheduling and dispatching
+  - Inventory management
+  - Customer management
+  - Billing and invoicing
+  - Reporting and analytics
+
+- **White-Labeling Capabilities**:
+  - Custom branding
+  - Domain customization
+  - Terminology adaptation
+  - Email template customization
+
+- **Enterprise-Grade Security**:
+  - Role-based access control
+  - Multi-factor authentication
+  - Data encryption
+  - Audit logging
 
 ## Project Structure
 
-- `/app-builder`: Core app builder platform
-  - `/core`: Core modules (data-modeling, ui-builder, workflow, auth, integrations)
-  - `/plugins`: Extension plugins for specific industries and use cases
-  - `/templates`: Pre-built application templates
-- `/backend`: Legacy NocoBase server with HVAC service plugin
-- `/docs`: Documentation
+- `/auth-service`: Authentication service integrating with Auth0/Clerk
+- `/customer-portal`: Customer-facing portal
+- `/technician-portal`: Mobile-friendly technician portal
+- `/admin-dashboard`: Admin management interface
+- `/nginx`: API Gateway configuration
+- `/postgres`: Database initialization scripts
+- `/backend`: NocoBase with HVAC service plugin
+- `/plugins`: Extension plugins for specific industries
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js 18+
-- Docker Desktop (for containerized setup)
-- PostgreSQL or MySQL (recommended for production)
+- Docker Desktop
+- Git
+- Auth0 or Clerk account (for authentication)
 
-### Option 1: Docker Setup (Recommended)
+### Docker Setup (Recommended)
 
 1. Clone the repository:
-   ```
+   ```bash
    git clone https://github.com/speedymep/SpeedyOS.git
    cd SpeedyOS
    ```
 
-2. Start the application using Docker Compose:
+2. Configure environment variables:
+   ```bash
+   cp .env.ninja .env
    ```
-   docker-compose up
+   Edit the `.env` file to set your specific configuration values.
+
+3. Start the platform:
+   ```bash
+   docker-compose -f docker-compose.ninja.yml up -d
    ```
 
-3. Access the application at http://localhost:13000
-
-### Option 2: Direct Installation
-
-1. Clone the repository:
-   ```
-   git clone https://github.com/speedymep/SpeedyOS.git
-   cd SpeedyOS
-   ```
-
-2. Install dependencies and start the HVAC service app:
-   ```
-   cd backend/hvac-service-app
-   npm install
-   npm run dev
-   ```
-
-3. Access the application at http://localhost:13000
+4. Access the platform:
+   - Admin Dashboard: http://localhost:8080/admin/
+   - Customer Portal: http://localhost:8080/customer/
+   - Technician Portal: http://localhost:8080/technician/
+   - NocoBase Admin: http://localhost:8080/nocobase/
+   - n8n Workflow Editor: http://localhost:8080/workflow/
 
 ### Initial Login
 
 After starting the application, you can log in with the following credentials:
 
-- Email: admin@nocobase.com
-- Password: admin123
+- Email: admin@ninjaos.com
+- Password: NinjaAdmin123
 
-### Building Applications
+## Documentation
 
-1. **Define Data Models**: Create your data models using the Data Modeling tool
-2. **Design UI**: Build your user interface using the UI Builder
-3. **Create Workflows**: Automate business processes using the Workflow tool
-4. **Configure Authentication**: Set up user roles and permissions
-5. **Deploy**: Deploy your application to production
+- [Setup Guide](NINJA_OS_SETUP.md)
+- [Architecture Overview](NINJA_OS_ARCHITECTURE.md)
+- [Docker Setup for Mac](DOCKER_MAC_SETUP.md)
 
-## Extending the Platform
+## Industry Solutions
 
-You can extend the platform by creating custom plugins:
+Ninja OS can be customized for various field service industries:
 
-1. Create a new directory in the `plugins` folder
-2. Implement your plugin using the Plugin API
-3. Register your plugin in the App Builder
+- **HVAC Service**
+- **Plumbing**
+- **Electrical**
+- **General Contractors**
+- **IT Services**
+- **Property Maintenance**
 
 ## License
 
