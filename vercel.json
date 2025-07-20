@@ -1,5 +1,5 @@
 {
-  "buildCommand": "npm install -g vite && cd backend/hvac-service-app && npm install && npm run build",
+  "buildCommand": "cd backend/hvac-service-app && node vercel-build.js",
   "outputDirectory": "backend/hvac-service-app/dist",
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
