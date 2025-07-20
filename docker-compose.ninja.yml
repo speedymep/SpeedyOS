@@ -1,0 +1,185 @@
+version: '3.8'
+
+services:
+  # NocoBase - Data and UI Layer
+  nocobase:
+    image: nocobase/nocobase:latest
+    restart: unless-stopped
+    ports:
+      - "13000:13000"
+    environment:
+      - DB_DIALECT=postgres
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_DATABASE=nocobase
+      - DB_USER=nocobase
+      - DB_PASSWORD=nocobase
+      - LOCAL_STORAGE_DEST=/app/storage
+      - APP_PORT=13000
+      - API_BASE_PATH=/api/
+      - INIT_ROOT_EMAIL=admin@ninjaos.com
+      - INIT_ROOT_PASSWORD=NinjaAdmin123
+      - INIT_ROOT_NICKNAME=Ninja Admin
+      - PLUGINS=hvac-plugin
+    volumes:
+      - nocobase_data:/app/storage
+      - ./plugins:/app/plugins
+    depends_on:
+      - postgres
+    networks:
+      - ninja_network
+
+  # n8n - Workflow Engine
+  n8n:
+    image: n8nio/n8n:latest
+    restart: unless-stopped
+    ports:
+      - "5678:5678"
+    environment:
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=http
+      - N8N_HOST=n8n
+      - N8N_EDITOR_BASE_URL=http://localhost:5678
+      - N8N_ENCRYPTION_KEY=ninjaos-encryption-key
+      - N8N_AUTH_ENABLED=true
+      - N8N_BASIC_AUTH_ACTIVE=true
+      - N8N_BASIC_AUTH_USER=admin
+      - N8N_BASIC_AUTH_PASSWORD=NinjaAdmin123
+      - DB_TYPE=postgresdb
+      - DB_POSTGRESDB_HOST=postgres
+      - DB_POSTGRESDB_PORT=5432
+      - DB_POSTGRESDB_DATABASE=n8n
+      - DB_POSTGRESDB_USER=n8n
+      - DB_POSTGRESDB_PASSWORD=n8n
+    volumes:
+      - n8n_data:/home/node/.n8n
+    depends_on:
+      - postgres
+    networks:
+      - ninja_network
+
+  # Auth Service - Authentication & Authorization
+  auth-service:
+    image: node:18
+    working_dir: /app
+    volumes:
+      - ./auth-service:/app
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - AUTH0_DOMAIN=${AUTH0_DOMAIN}
+      - AUTH0_CLIENT_ID=${AUTH0_CLIENT_ID}
+      - AUTH0_CLIENT_SECRET=${AUTH0_CLIENT_SECRET}
+      - AUTH0_CALLBACK_URL=http://localhost:3000/callback
+      - SESSION_SECRET=ninja-session-secret
+      - API_URL=http://nocobase:13000/api
+    command: >
+      bash -c "npm install && npm start"
+    networks:
+      - ninja_network
+
+  # API Gateway - Integration Layer
+  api-gateway:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/conf.d:/etc/nginx/conf.d
+    depends_on:
+      - nocobase
+      - n8n
+      - auth-service
+    networks:
+      - ninja_network
+
+  # Customer Portal - Frontend
+  customer-portal:
+    image: node:18
+    working_dir: /app
+    volumes:
+      - ./customer-portal:/app
+    ports:
+      - "3001:3001"
+    environment:
+      - PORT=3001
+      - API_URL=http://api-gateway:80
+      - AUTH_URL=http://auth-service:3000
+    command: >
+      bash -c "npm install && npm start"
+    depends_on:
+      - api-gateway
+    networks:
+      - ninja_network
+
+  # Technician Portal - Frontend
+  technician-portal:
+    image: node:18
+    working_dir: /app
+    volumes:
+      - ./technician-portal:/app
+    ports:
+      - "3002:3002"
+    environment:
+      - PORT=3002
+      - API_URL=http://api-gateway:80
+      - AUTH_URL=http://auth-service:3000
+    command: >
+      bash -c "npm install && npm start"
+    depends_on:
+      - api-gateway
+    networks:
+      - ninja_network
+
+  # Admin Dashboard - Frontend
+  admin-dashboard:
+    image: node:18
+    working_dir: /app
+    volumes:
+      - ./admin-dashboard:/app
+    ports:
+      - "3003:3003"
+    environment:
+      - PORT=3003
+      - API_URL=http://api-gateway:80
+      - AUTH_URL=http://auth-service:3000
+    command: >
+      bash -c "npm install && npm start"
+    depends_on:
+      - api-gateway
+    networks:
+      - ninja_network
+
+  # Database - PostgreSQL
+  postgres:
+    image: postgres:14
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_MULTIPLE_DATABASES=nocobase,n8n
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./postgres/init-multiple-dbs.sh:/docker-entrypoint-initdb.d/init-multiple-dbs.sh
+    networks:
+      - ninja_network
+
+  # Redis - Caching and Session Store
+  redis:
+    image: redis:alpine
+    restart: unless-stopped
+    volumes:
+      - redis_data:/data
+    networks:
+      - ninja_network
+
+volumes:
+  postgres_data:
+  nocobase_data:
+  n8n_data:
+  redis_data:
+
+networks:
+  ninja_network:
+    driver: bridge
