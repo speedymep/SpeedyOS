@@ -1,41 +1,53 @@
-# SpeedyOS - Multi-Tenant B2B No-Code Platform for HVAC Field Service Management
+# SpeedyOS - Multi-Tenant B2B No-Code App Builder Platform
 
-SpeedyOS is a comprehensive white-label platform for field service management, specifically designed for HVAC businesses. It provides a no-code environment for creating custom applications, workflows, and forms.
+SpeedyOS is a comprehensive no-code platform for building custom business applications. It provides a flexible and extensible framework for creating various types of applications, including field service management, CRM, project management, and more.
 
 ## Architecture
 
-- **UI and Data Modeling**: NocoBase
-- **Authentication**: Clerk
-- **Workflow Automation**: n8n
-- **Custom UI Components**: Enhanced form experiences
+- **Core Modules**:
+  - **Data Modeling**: Define and manage data models with custom fields, relationships, and validation
+  - **UI Builder**: Create responsive user interfaces with drag-and-drop components
+  - **Workflow Automation**: Design and execute business processes with a visual workflow editor
+  - **Authentication**: Secure your applications with role-based access control
+  - **Integrations**: Connect with third-party services and APIs
+
+- **Plugins**: Extend the platform with additional functionality
+  - **Field Service**: Components and templates for field service applications
+  - **CRM**: Components and templates for CRM applications
+  - **Project Management**: Components and templates for project management applications
+
+- **Templates**: Pre-built application templates for common use cases
+  - **HVAC Service**: Complete HVAC field service management application
+  - **General Contractor**: General contractor management application
+  - **IT Service Desk**: IT service desk application
 
 ## Features
 
-- Multi-tenant architecture for B2B SaaS deployment
-- White-labeling capabilities for reselling
-- No-code form and workflow builders
-- HVAC-specific templates and components
-- Field service management tools
-- Mobile-friendly interface
-- Integration capabilities with third-party services
+- **No-Code Development**: Build applications without writing code
+- **Multi-Tenant Architecture**: Support for B2B SaaS deployment
+- **White-Labeling**: Customize the look and feel of your applications
+- **Responsive Design**: Mobile-friendly interface
+- **Extensible Framework**: Add custom components and integrations
+- **Role-Based Access Control**: Secure your applications with fine-grained permissions
+- **Workflow Automation**: Create complex business processes with a visual editor
+- **Integration Capabilities**: Connect with third-party services and APIs
 
 ## Project Structure
 
-- `/backend`: NocoBase server with HVAC service plugin
-- `/frontend`: NocoBase client with custom UI components
-- `/integrations`: Connectors for Clerk and n8n
-- `/config`: Configuration files for multi-tenancy
+- `/app-builder`: Core app builder platform
+  - `/core`: Core modules (data-modeling, ui-builder, workflow, auth, integrations)
+  - `/plugins`: Extension plugins for specific industries and use cases
+  - `/templates`: Pre-built application templates
+- `/backend`: Legacy NocoBase server with HVAC service plugin
 - `/docs`: Documentation
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js 16+
+- Node.js 18+
 - Yarn
-- SQLite (for development) or PostgreSQL/MySQL (for production)
-- Clerk account for authentication
-- n8n instance for workflow automation
+- PostgreSQL or MySQL (recommended for production)
 
 ### Installation
 
@@ -47,61 +59,32 @@ SpeedyOS is a comprehensive white-label platform for field service management, s
 
 2. Install dependencies:
    ```
-   cd backend/hvac-service-app
+   cd app-builder
    yarn install
    ```
 
-3. Configure environment variables:
-   Edit the `.env` file in the `backend/hvac-service-app` directory:
-   ```
-   # Authentication Configuration
-   AUTH_PROVIDER=clerk
-   CLERK_API_KEY=your_clerk_api_key
-   CLERK_FRONTEND_API=your_clerk_frontend_api
-
-   # n8n Integration
-   N8N_API_URL=your_n8n_api_url
-   N8N_API_KEY=your_n8n_api_key
-
-   # Multi-tenant Configuration (optional)
-   ALLOW_MULTI_TENANT=true
-   TENANT_DOMAIN_PATTERN=*.speedyos.com
-   ```
-
-4. Install NocoBase:
-   ```
-   yarn nocobase install
-   ```
-
-5. Start the development server:
+3. Start the development server:
    ```
    yarn dev
    ```
 
-6. Access the application at http://localhost:12000
+4. Access the application at http://localhost:12000
 
-### Production Deployment
+### Building Applications
 
-For production deployment, follow these steps:
+1. **Define Data Models**: Create your data models using the Data Modeling tool
+2. **Design UI**: Build your user interface using the UI Builder
+3. **Create Workflows**: Automate business processes using the Workflow tool
+4. **Configure Authentication**: Set up user roles and permissions
+5. **Deploy**: Deploy your application to production
 
-1. Update the database configuration in `.env` to use PostgreSQL or MySQL
-2. Build the application:
-   ```
-   yarn build
-   ```
-3. Start the production server:
-   ```
-   yarn start
-   ```
+## Extending the Platform
 
-## White Labeling
+You can extend the platform by creating custom plugins:
 
-SpeedyOS supports white labeling through NocoBase's UI settings. You can customize:
-
-- Logo
-- Colors
-- Company name
-- Domain name (with multi-tenant setup)
+1. Create a new directory in the `plugins` folder
+2. Implement your plugin using the Plugin API
+3. Register your plugin in the App Builder
 
 ## License
 

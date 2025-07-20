@@ -1,0 +1,28 @@
+{
+  "name": "speedyos-app-builder",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "core/*",
+    "plugins/*",
+    "templates/*"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "dev": "lerna run dev --parallel",
+    "build": "lerna run build",
+    "start": "lerna run start --parallel",
+    "test": "lerna run test",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@clerk/clerk-sdk-node": "^5.1.6",
+    "lerna": "^8.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3"
+  }
+}
