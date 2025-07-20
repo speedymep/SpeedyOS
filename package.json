@@ -1,0 +1,10 @@
+{
+  "name": "speedyos-root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "prebuild": "bash ./build.sh",
+    "build": "cd build && npm install && npm run build",
+    "start": "cd build && npm run preview"
+  }
+}

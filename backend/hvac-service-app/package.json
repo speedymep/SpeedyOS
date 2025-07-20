@@ -15,7 +15,7 @@
     "dev": "nocobase dev",
     "start": "nocobase start",
     "clean": "nocobase clean",
-    "build": "nocobase build",
+    "build": "node vercel-build.js",
     "test": "nocobase test",
     "e2e": "nocobase e2e",
     "tar": "nocobase tar",

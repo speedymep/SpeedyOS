@@ -1,0 +1,7 @@
+{
+  "buildCommand": "cd backend/hvac-service-app && node vercel-build.js",
+  "outputDirectory": "backend/hvac-service-app/dist",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}

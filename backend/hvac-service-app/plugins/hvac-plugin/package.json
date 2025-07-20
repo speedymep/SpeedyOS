@@ -1,0 +1,30 @@
+{
+  "name": "@speedyos/plugin-hvac",
+  "version": "0.1.0",
+  "description": "HVAC Service Management Plugin for NocoBase",
+  "license": "MIT",
+  "dependencies": {
+    "@nocobase/client": "0.20.0-alpha.17",
+    "@nocobase/server": "0.20.0-alpha.17",
+    "@nocobase/test": "0.20.0-alpha.17"
+  },
+  "peerDependencies": {
+    "@nocobase/client": "0.x",
+    "@nocobase/server": "0.x",
+    "@nocobase/test": "0.x"
+  },
+  "main": "./lib/server/index.js",
+  "files": [
+    "lib",
+    "src",
+    "README.md",
+    "README.zh-CN.md",
+    "CHANGELOG.md",
+    "CHANGELOG.zh-CN.md"
+  ],
+  "devDependencies": {
+    "@nocobase/client": "0.20.0-alpha.17",
+    "@nocobase/server": "0.20.0-alpha.17",
+    "@nocobase/test": "0.20.0-alpha.17"
+  }
+}

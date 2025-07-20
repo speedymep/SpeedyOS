@@ -1,0 +1,39 @@
+version: '3'
+services:
+  app:
+    image: node:18
+    working_dir: /app
+    volumes:
+      - ./backend/hvac-service-app:/app
+    ports:
+      - "13000:13000"
+    environment:
+      - DB_DIALECT=sqlite
+      - DB_STORAGE=storage/db/hvac-service.sqlite
+      - LOCAL_STORAGE_DEST=storage
+      - APP_PORT=13000
+      - API_BASE_PATH=/api/
+      - PLUGIN_COLLECTION_MANAGER_COLLECTION_SORT=true
+      - PLUGIN_USERS_INIT_PASSWORD=admin123
+      - PLUGIN_USERS_SUPER_EMAIL=admin@nocobase.com
+      - PLUGIN_USERS_SUPER_PASSWORD=admin123
+      - INIT_APP_LANG=en-US
+      - INIT_ROOT_EMAIL=admin@nocobase.com
+      - INIT_ROOT_PASSWORD=admin123
+      - INIT_ROOT_NICKNAME=Super Admin
+      - ENABLE_DYNAMIC_YIELD=true
+      - PLUGINS=hvac-plugin
+    command: >
+      bash -c "npm install && npm run start"
+    networks:
+      - hvac-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:13000/api/status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+networks:
+  hvac-network:
+    driver: bridge

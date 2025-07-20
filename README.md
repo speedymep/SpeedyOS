@@ -1,107 +1,116 @@
-# SpeedyOS - Multi-Tenant B2B No-Code Platform for HVAC Field Service Management
+# Ninja OS - Comprehensive B2B Field Service Platform
 
-SpeedyOS is a comprehensive white-label platform for field service management, specifically designed for HVAC businesses. It provides a no-code environment for creating custom applications, workflows, and forms.
+Ninja OS is a white-labeled, integrated platform that combines best-in-class tools to provide a complete solution for field service businesses. It integrates NocoBase, n8n, and Auth0/Clerk into a unified platform that can be customized and resold as a complete solution.
 
 ## Architecture
 
-- **UI and Data Modeling**: NocoBase
-- **Authentication**: Clerk
-- **Workflow Automation**: n8n
-- **Custom UI Components**: Enhanced form experiences
+- **Core Components**:
+  - **NocoBase**: Data modeling and admin interfaces
+  - **n8n**: Sophisticated workflow automation
+  - **Auth0/Clerk**: User authentication and role management
+  - **Custom UI**: White-labeled customer experiences
+
+- **Multi-portal Architecture**:
+  - **Customer Portal**: Self-service portal for customers
+  - **Technician Portal**: Mobile-friendly interface for field technicians
+  - **Admin Dashboard**: Comprehensive management interface
+  - **Partner Portal**: Interface for subcontractors and partners
+
+- **Integration Layer**:
+  - **API Gateway**: Unified API access
+  - **Authentication Service**: Centralized auth management
+  - **Workflow Engine**: Business process orchestration
 
 ## Features
 
-- Multi-tenant architecture for B2B SaaS deployment
-- White-labeling capabilities for reselling
-- No-code form and workflow builders
-- HVAC-specific templates and components
-- Field service management tools
-- Mobile-friendly interface
-- Integration capabilities with third-party services
+- **Comprehensive Field Service Management**:
+  - Service request management
+  - Scheduling and dispatching
+  - Inventory management
+  - Customer management
+  - Billing and invoicing
+  - Reporting and analytics
+
+- **White-Labeling Capabilities**:
+  - Custom branding
+  - Domain customization
+  - Terminology adaptation
+  - Email template customization
+
+- **Enterprise-Grade Security**:
+  - Role-based access control
+  - Multi-factor authentication
+  - Data encryption
+  - Audit logging
 
 ## Project Structure
 
-- `/backend`: NocoBase server with HVAC service plugin
-- `/frontend`: NocoBase client with custom UI components
-- `/integrations`: Connectors for Clerk and n8n
-- `/config`: Configuration files for multi-tenancy
-- `/docs`: Documentation
+- `/auth-service`: Authentication service integrating with Auth0/Clerk
+- `/customer-portal`: Customer-facing portal
+- `/technician-portal`: Mobile-friendly technician portal
+- `/admin-dashboard`: Admin management interface
+- `/nginx`: API Gateway configuration
+- `/postgres`: Database initialization scripts
+- `/backend`: NocoBase with HVAC service plugin
+- `/plugins`: Extension plugins for specific industries
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js 16+
-- Yarn
-- SQLite (for development) or PostgreSQL/MySQL (for production)
-- Clerk account for authentication
-- n8n instance for workflow automation
+- Docker Desktop
+- Git
+- Auth0 or Clerk account (for authentication)
 
-### Installation
+### Docker Setup (Recommended)
 
 1. Clone the repository:
-   ```
+   ```bash
    git clone https://github.com/speedymep/SpeedyOS.git
    cd SpeedyOS
    ```
 
-2. Install dependencies:
+2. Configure environment variables:
+   ```bash
+   cp .env.ninja .env
    ```
-   cd backend/hvac-service-app
-   yarn install
-   ```
+   Edit the `.env` file to set your specific configuration values.
 
-3. Configure environment variables:
-   Edit the `.env` file in the `backend/hvac-service-app` directory:
-   ```
-   # Authentication Configuration
-   AUTH_PROVIDER=clerk
-   CLERK_API_KEY=your_clerk_api_key
-   CLERK_FRONTEND_API=your_clerk_frontend_api
-
-   # n8n Integration
-   N8N_API_URL=your_n8n_api_url
-   N8N_API_KEY=your_n8n_api_key
-
-   # Multi-tenant Configuration (optional)
-   ALLOW_MULTI_TENANT=true
-   TENANT_DOMAIN_PATTERN=*.speedyos.com
+3. Start the platform:
+   ```bash
+   docker-compose -f docker-compose.ninja.yml up -d
    ```
 
-4. Install NocoBase:
-   ```
-   yarn nocobase install
-   ```
+4. Access the platform:
+   - Admin Dashboard: http://localhost:8080/admin/
+   - Customer Portal: http://localhost:8080/customer/
+   - Technician Portal: http://localhost:8080/technician/
+   - NocoBase Admin: http://localhost:8080/nocobase/
+   - n8n Workflow Editor: http://localhost:8080/workflow/
 
-5. Start the development server:
-   ```
-   yarn dev
-   ```
+### Initial Login
 
-6. Access the application at http://localhost:12000
+After starting the application, you can log in with the following credentials:
 
-### Production Deployment
+- Email: admin@ninjaos.com
+- Password: NinjaAdmin123
 
-For production deployment, follow these steps:
+## Documentation
 
-1. Update the database configuration in `.env` to use PostgreSQL or MySQL
-2. Build the application:
-   ```
-   yarn build
-   ```
-3. Start the production server:
-   ```
-   yarn start
-   ```
+- [Setup Guide](NINJA_OS_SETUP.md)
+- [Architecture Overview](NINJA_OS_ARCHITECTURE.md)
+- [Docker Setup for Mac](DOCKER_MAC_SETUP.md)
 
-## White Labeling
+## Industry Solutions
 
-SpeedyOS supports white labeling through NocoBase's UI settings. You can customize:
+Ninja OS can be customized for various field service industries:
 
-- Logo
-- Colors
-- Company name
-- Domain name (with multi-tenant setup)
+- **HVAC Service**
+- **Plumbing**
+- **Electrical**
+- **General Contractors**
+- **IT Services**
+- **Property Maintenance**
 
 ## License
 
