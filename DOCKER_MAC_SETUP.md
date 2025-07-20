@@ -20,22 +20,40 @@ cd SpeedyOS
 
 ### 2. Start the Application with Docker Compose
 
-From the root directory of the project, run:
+From the root directory of the project, you have two options:
+
+#### Option A: Production Mode
 
 ```bash
 docker-compose up
 ```
 
-This command will:
+This starts the application in production mode with optimized performance.
+
+#### Option B: Development Mode (Recommended for local development)
+
+```bash
+docker-compose -f docker-compose.dev.yml up
+```
+
+This starts the application in development mode with hot reloading, which is better for making changes and seeing them immediately.
+
+Both commands will:
 - Build the Docker image based on the Dockerfile
 - Set up the necessary environment variables
 - Start the NocoBase application with the HVAC service plugin
 - Map port 13000 from the container to your local machine
 
-If you want to run it in the background, use:
+If you want to run either in the background, add `-d`:
 
 ```bash
 docker-compose up -d
+```
+
+or
+
+```bash
+docker-compose -f docker-compose.dev.yml up -d
 ```
 
 ### 3. Access the Application
