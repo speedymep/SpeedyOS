@@ -1,0 +1,23 @@
+version: '3'
+services:
+  app:
+    image: node:18
+    working_dir: /app
+    volumes:
+      - ./backend/hvac-service-app:/app
+    ports:
+      - "13000:13000"
+    environment:
+      - DB_DIALECT=sqlite
+      - DB_STORAGE=storage/db/hvac-service.sqlite
+      - LOCAL_STORAGE_DEST=storage
+      - APP_PORT=13000
+      - API_BASE_PATH=/api/
+    command: >
+      bash -c "npm install && npm run start"
+    networks:
+      - hvac-network
+
+networks:
+  hvac-network:
+    driver: bridge

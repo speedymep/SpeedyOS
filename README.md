@@ -46,10 +46,10 @@ SpeedyOS is a comprehensive no-code platform for building custom business applic
 ### Prerequisites
 
 - Node.js 18+
-- Yarn
+- Docker Desktop (for containerized setup)
 - PostgreSQL or MySQL (recommended for production)
 
-### Installation
+### Option 1: Docker Setup (Recommended)
 
 1. Clone the repository:
    ```
@@ -57,18 +57,36 @@ SpeedyOS is a comprehensive no-code platform for building custom business applic
    cd SpeedyOS
    ```
 
-2. Install dependencies:
+2. Start the application using Docker Compose:
    ```
-   cd app-builder
-   yarn install
-   ```
-
-3. Start the development server:
-   ```
-   yarn dev
+   docker-compose up
    ```
 
-4. Access the application at http://localhost:12000
+3. Access the application at http://localhost:13000
+
+### Option 2: Direct Installation
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/speedymep/SpeedyOS.git
+   cd SpeedyOS
+   ```
+
+2. Install dependencies and start the HVAC service app:
+   ```
+   cd backend/hvac-service-app
+   npm install
+   npm run dev
+   ```
+
+3. Access the application at http://localhost:13000
+
+### Initial Login
+
+After starting the application, you can log in with the following credentials:
+
+- Email: admin@nocobase.com
+- Password: admin123
 
 ### Building Applications
 
