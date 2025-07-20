@@ -1,85 +1,95 @@
-# Docker Setup Guide for Mac
+# Docker Setup for Mac
 
-This guide will help you set up the SpeedyOS HVAC Service Platform using Docker Desktop on your Mac.
+This guide provides step-by-step instructions for setting up Ninja OS on macOS using Docker Desktop.
 
 ## Prerequisites
 
-- Docker Desktop for Mac installed and running
-- Git
+- macOS 10.15 or newer
+- Docker Desktop for Mac installed
+- Git installed
 
 ## Installation Steps
 
-### 1. Clone the Repository
+### 1. Install Docker Desktop for Mac
 
-Open Terminal and run:
+If you haven't already installed Docker Desktop:
+
+1. Download Docker Desktop from [https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop)
+2. Install the application by dragging it to your Applications folder
+3. Start Docker Desktop and wait for it to complete initialization
+4. Verify installation by running `docker --version` and `docker-compose --version` in Terminal
+
+### 2. Clone the Repository
 
 ```bash
 git clone https://github.com/speedymep/SpeedyOS.git
 cd SpeedyOS
 ```
 
-### 2. Start the Application with Docker Compose
-
-From the root directory of the project, you have two options:
-
-#### Option A: Production Mode
+### 3. Configure Environment
 
 ```bash
-docker-compose up
+cp .env.ninja .env
 ```
 
-This starts the application in production mode with optimized performance.
+Edit the `.env` file to set your specific configuration values if needed.
 
-#### Option B: Development Mode (Recommended for local development)
+### 4. Start the Platform
 
-```bash
-docker-compose -f docker-compose.dev.yml up
-```
-
-This starts the application in development mode with hot reloading, which is better for making changes and seeing them immediately.
-
-Both commands will:
-- Build the Docker image based on the Dockerfile
-- Set up the necessary environment variables
-- Start the NocoBase application with the HVAC service plugin
-- Map port 13000 from the container to your local machine
-
-If you want to run either in the background, add `-d`:
+For a simplified setup with just the core components:
 
 ```bash
 docker-compose up -d
 ```
 
-or
+For the full platform with all components:
 
 ```bash
-docker-compose -f docker-compose.dev.yml up -d
+docker-compose -f docker-compose.ninja.yml up -d
 ```
 
-### 3. Access the Application
+### 5. Verify Services
 
-Once the container is running, open your browser and navigate to:
+Check that all services are running:
 
+```bash
+docker-compose ps
 ```
-http://localhost:13000
-```
 
-### 4. Log In
+You should see all services in the "Up" state.
 
-Use the following credentials to log in:
+### 6. Access the Platform
 
-- Email: admin@nocobase.com
-- Password: admin123
+- Main Landing Page: http://localhost:8080
+- NocoBase Admin: http://localhost:12000 or http://localhost:8080/nocobase/
+- n8n Workflow Editor: http://localhost:12001 or http://localhost:8080/workflow/
 
-## Using the HVAC Service Platform
+### 7. Initial Login
 
-After logging in, you'll see the NocoBase admin interface with the HVAC Service menu in the sidebar. From here, you can:
+- NocoBase:
+  - Email: admin@ninjaos.com
+  - Password: NinjaAdmin123
 
-1. Navigate to the HVAC Dashboard to see an overview of your service business
-2. Manage customers, service requests, technicians, and equipment
-3. Create and track service requests
-4. Assign technicians to service requests
-5. Track equipment for customers
+- n8n:
+  - Username: admin
+  - Password: NinjaAdmin123
+
+## Using the Platform
+
+After logging in to NocoBase, you'll have access to:
+
+1. Data models for customers, technicians, equipment, and service requests
+2. Dashboard with business analytics and service schedule
+3. Technician scheduling with calendar view
+4. Service request management
+5. Customer management
+
+In n8n, you can create workflows for:
+
+1. Automated scheduling
+2. Notifications and alerts
+3. Data synchronization
+4. Custom business processes
 
 ## Docker Commands
 
@@ -101,80 +111,74 @@ To follow the logs in real-time:
 docker-compose logs -f
 ```
 
-### Stop the Application
+### Stop the Platform
 
 ```bash
 docker-compose down
 ```
 
-### Restart the Application
+### Restart the Platform
 
 ```bash
 docker-compose restart
-```
-
-### Rebuild the Container
-
-If you make changes to the Dockerfile or need to rebuild:
-
-```bash
-docker-compose up --build
 ```
 
 ## Troubleshooting
 
 ### Port Conflicts
 
-If port 13000 is already in use on your Mac, you can modify the `docker-compose.yml` file to use a different port:
+If you encounter port conflicts, you can modify the port mappings in the `docker-compose.yml` file:
 
 ```yaml
 ports:
-  - "13001:13000"  # Change 13001 to any available port
+  - "NEW_PORT:CONTAINER_PORT"
 ```
 
-Then restart Docker Compose.
+### Docker Desktop Resources
 
-### Container Fails to Start
-
-If the container fails to start, check the logs:
-
-```bash
-docker-compose logs
-```
-
-### Database Issues
-
-If you encounter database issues, you can reset the database by removing the container and volume:
-
-```bash
-docker-compose down -v
-docker-compose up
-```
-
-### Permission Issues
-
-If you encounter permission issues with Docker on Mac:
+Ensure Docker Desktop has sufficient resources allocated:
 
 1. Open Docker Desktop
-2. Go to Preferences > Resources > File Sharing
-3. Make sure the directory containing your project is in the list of shared paths
+2. Go to Preferences > Resources
+3. Allocate at least:
+   - 4 CPUs
+   - 8 GB RAM
+   - 2 GB Swap
+   - 60 GB Disk
+
+### Database Initialization Issues
+
+If the database fails to initialize properly:
+
+```bash
+docker-compose down -v  # This will remove volumes, so use with caution
+docker-compose up -d
+```
+
+### Checking Logs
+
+To view logs for a specific service:
+
+```bash
+docker-compose logs -f nocobase
+docker-compose logs -f n8n
+docker-compose logs -f postgres
+```
 
 ## Data Persistence
 
-The application data is stored in a SQLite database inside the Docker container. The database file is located at:
+All data is stored in Docker volumes:
 
-```
-/app/storage/db/hvac-service.sqlite
-```
+- `postgres_data`: Database data
+- `nocobase_data`: NocoBase storage
+- `n8n_data`: n8n workflows and credentials
 
-To persist this data between container restarts, the Docker Compose configuration mounts the application directory as a volume.
+## Accessing Container Shells
 
-## Accessing the Container Shell
-
-If you need to access the shell inside the container:
+If you need to access a shell inside a container:
 
 ```bash
-docker-compose exec app bash
+docker-compose exec nocobase sh
+docker-compose exec n8n sh
+docker-compose exec postgres bash
 ```
-
-This gives you a bash shell inside the running container where you can run commands directly.
